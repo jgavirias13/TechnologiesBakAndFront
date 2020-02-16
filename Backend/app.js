@@ -18,10 +18,11 @@ colors.setTheme({
 db();
 
 routes(router);
+app.use(cors());
 app.use(express.json());
 app.use(express.static(__dirname + '/app/public'));
 app.use('/api', router);
-app.use(cors());
+
 
 app.listen(config.PORT, () => {
   console.log('========================================================='.info);

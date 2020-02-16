@@ -1,0 +1,21 @@
+<h1>
+  {{ technology.name | uppercase}}
+  <small>({{ technology.createdAt | date: "y" }})</small>
+</h1>
+<hr>
+<div class="row">
+  <div class="col-md-4">
+    <img [src]="technology.logo" [alt]="technology.name" class="img-fluid">
+    <br/>
+    <a [routerLink]="['/Technologies']" class="btn btn-outline-danger btn-block">
+      Ir Atras
+    </a>
+  </div>
+  <div class="col-md-8">
+    <h3>{{technology.name}}</h3>
+    <br>
+    <p>{{technology.description}}</p>
+    <hr>
+    <p><small *ngFor="let tag of technology.tags"> {{tag}} </small></p>
+  </div>
+</div>

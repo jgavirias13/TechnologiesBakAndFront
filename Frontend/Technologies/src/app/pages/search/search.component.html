@@ -1,0 +1,15 @@
+<h1>Resultado de la busqueda</h1>
+<hr>
+<p><strong>Buscando:</strong> {{query}}</p>
+
+<div class="row" *ngIf="technologies.length == 0">
+  <div class="col-md-12">
+    <div class="alert alert-info" role="alert">
+      <p>No se han encontrado resultados</p>
+    </div>
+  </div>
+</div>
+
+<div class="card-columns">
+  <app-technology-card [technology]="technology" *ngFor="let technology of technologies"></app-technology-card>
+</div>
